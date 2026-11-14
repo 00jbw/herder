@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Compose Material3 Card, replaced by one shape: light grey,
+     12dp corners. The single background every card in the Views UI uses. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#F0EDF5" />
+    <corners android:radius="12dp" />
+</shape>

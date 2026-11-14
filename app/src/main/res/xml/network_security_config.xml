@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Herder talks to exactly one cleartext endpoint: the llama-server it
+  runs itself, on this device's loopback. Permit cleartext to the
+  loopback spellings only; everything else stays denied.
+
+  The IPv6 entry is written [::1], brackets included: the platform's
+  own docs name the loopback IPv6 domain in that form, and the
+  cleartext error renders the host the same way ("Cleartext HTTP
+  traffic to [::1] not permitted"). The bare ::1 entry shipped in
+  v0.1.4 never matched and the block persisted. The expanded spelling
+  is the same single loopback address, included so whichever
+  canonical form the checker uses, one entry matches it.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">ip6-localhost</domain>
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <domain includeSubdomains="false">[::1]</domain>
+        <domain includeSubdomains="false">::1</domain>
+        <domain includeSubdomains="false">0:0:0:0:0:0:0:1</domain>
+    </domain-config>
+</network-security-config>
