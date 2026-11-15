@@ -36,7 +36,7 @@ downloads you start.
 
 ## Install
 
-Download `Herder-v0.3.4-arm64.apk` from the
+Download `Herder-v0.3.5-arm64.apk` from the
 [Releases](https://github.com/00jbw/herder/releases) page and install it
 (sideload). Release APKs are signed with the Herder release key:
 

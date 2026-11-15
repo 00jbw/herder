@@ -612,16 +612,17 @@ class MainActivity : Activity() {
             setPadding(0, dp(8), 0, 0)
             gravity = Gravity.CENTER_VERTICAL
         }
-        ctxRow.addView(bodyText("Context: "))
+        ctxRow.addView(bodyText("Context (tokens): "))
         val ctxButtons = mutableListOf<Button>()
         val ctxStock = mutableListOf<Pair<Drawable, Int>>()
-        listOf(2048, 4096, 8192).forEach { size ->
+        val ctxSizes = listOf(2048, 4096, 8192, 16384, 32768)
+        ctxSizes.forEach { size ->
             val chip = Button(this).apply {
                 text = size.toString()
                 setOnClickListener {
                     contextSize = size
                     ctxButtons.forEachIndexed { i, b ->
-                        styleSelectable(b, listOf(2048, 4096, 8192)[i] == contextSize, ctxStock[i].first, ctxStock[i].second)
+                        styleSelectable(b, ctxSizes[i] == contextSize, ctxStock[i].first, ctxStock[i].second)
                     }
                 }
             }
