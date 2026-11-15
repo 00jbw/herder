@@ -10,7 +10,7 @@ plugins {
 // claimed the two stayed in step "by construction" — they were a
 // hand-kept copy, and a bump that edited one would have desynced the
 // header silently. This is the by-construction version.)
-val herderVersion = "0.3.3"
+val herderVersion = "0.3.4"
 
 android {
     namespace = "org.bin.apk.herder"
@@ -20,7 +20,7 @@ android {
         applicationId = "org.bin.apk.herder"
         minSdk = 28
         targetSdk = 28
-        versionCode = 25
+        versionCode = 26
         versionName = herderVersion
         // Mirror the version into a resource so the UI can show it
         // without BuildConfig (AGP 8+ does not generate BuildConfig

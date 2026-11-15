@@ -335,7 +335,7 @@ class ServerService : Service() {
         const val EXTRA_PORT = "port"
         const val EXTRA_CTX = "ctx"
         const val EXTRA_THREADS = "threads"
-        const val DEFAULT_PORT = 8080
+        const val DEFAULT_PORT = 9931
         const val DEFAULT_CTX = 4096
         const val DEFAULT_THREADS = 4
         private const val CHANNEL_ID = "herder_engine"

@@ -6,13 +6,13 @@ under a foreground service, and serves an OpenAI-compatible API on the device
 itself. No account, no telemetry — nothing leaves the device except the
 downloads you start.
 
-- **Web UI:** http://[::1]:8080/
-- **API base:** http://[::1]:8080/v1 — point any local client at it, or use
+- **Web UI:** http://[::1]:9931/
+- **API base:** http://[::1]:9931/v1 — point any local client at it, or use
   Herder's own built-in chat tab.
 
 ## Features
 
-- **Verified backend.** llama.cpp v0.9.0 (build b12110) is downloaded from the
+- **Verified backend.** llama.cpp v1.0.0 (build b12359) is downloaded from the
   ggml-org releases and checked against a compiled-in SHA-256 before anything
   is extracted or run. The standard ARM64 build works on any arm64 device; a
   Snapdragon (Hexagon) build is offered as an experimental option for capable
@@ -36,7 +36,7 @@ downloads you start.
 
 ## Install
 
-Download `Herder-v0.3.3-arm64.apk` from the
+Download `Herder-v0.3.4-arm64.apk` from the
 [Releases](https://github.com/00jbw/herder/releases) page and install it
 (sideload). Release APKs are signed with the Herder release key:
 

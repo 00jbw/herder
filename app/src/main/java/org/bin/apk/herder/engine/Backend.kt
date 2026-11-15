@@ -26,11 +26,11 @@ import java.util.zip.GZIPInputStream
  * (This is the checksum pinning llama-android lacked.)
  */
 object Backend {
-    // Bumped b11798 → b12110 at Brian's call on 2026-11-08: b12110
-    // (published 2026-11-04) carries ggml 0.29.0 (the v0.9.0 line) —
-    // the jump worth taking — while landing just before the b12121
-    // same-day build. Both tarball layouts verified unchanged from
-    // b11798 before the pin swap (standard flat, Snapdragon bin/+lib/).
+    // Bumped b12110 → b12359 at Brian's call on 2026-11-14: b12359
+    // (published 2026-11-13) is the build the llama.cpp v1.0.0 tag
+    // points at — the first 1.x line, ggml 1.0.0. Both tarball
+    // layouts verified unchanged from b12110 before the pin swap
+    // (standard flat, Snapdragon bin/+lib/).
     //
     // v0.2.2 finding (onn gate, 2026-11-09): the SNAPDRAGON tarball is
     // built for high-end Kryo cores — its single libggml-cpu.so carries
@@ -49,13 +49,13 @@ object Backend {
     // verified on the onn. Herder therefore defaults to STANDARD on
     // every device; the Snapdragon variant remains selectable only as
     // an experiment for CPUs that actually have dot-product support.
-    const val BUILD_TAG = "b12110"
+    const val BUILD_TAG = "b12359"
 
-    /** The semantic version the pinned build belongs to: b12110 IS
-     *  llama.cpp v0.9.0 (verified on slate, where the b12110 binary
-     *  itself reports "version: 0.9.0-dev"). Shown on the Backend
-     *  card's title line, right-flushed (v0.2.8 cosmetic). */
-    const val BUILD_VERSION = "v0.9.0"
+    /** The semantic version the pinned build belongs to: b12359 IS
+     *  llama.cpp v1.0.0 (the v1.0.0 tag points at the b12359
+     *  release). Shown on the Backend card's title line,
+     *  right-flushed (v0.2.8 cosmetic). */
+    const val BUILD_VERSION = "v1.0.0"
 
     data class Variant(
         val id: String,
@@ -88,15 +88,15 @@ object Backend {
     val STANDARD = Variant(
         id = "arm64",
         label = "Standard ARM64",
-        sha256 = "44462ddcc09a841942e5cfe76554240ed6d7763bdf8538232075eb0ffd46ccbe",
-        sizeBytes = 79_929_855L,
+        sha256 = "a2a0a953dfd671c3067f3979b62ce07fc875363a014e16612fee64ff9a044d7b",
+        sizeBytes = 78_869_336L,
     )
 
     val SNAPDRAGON = Variant(
         id = "snapdragon",
         label = "Snapdragon (Hexagon) — experimental",
-        sha256 = "69b86654fd8358b97b1a6665b54fcfdfb856c29e5958d41a31c461101626a6ac",
-        sizeBytes = 65_027_754L,
+        sha256 = "8183b26d575a74fbc3ea75214669b622eb01b309013b0349814f7bad4dfe01e1",
+        sizeBytes = 65_594_200L,
     )
 
     val VARIANTS = listOf(STANDARD, SNAPDRAGON)

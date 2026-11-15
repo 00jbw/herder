@@ -802,7 +802,7 @@ class MainActivity : Activity() {
             gravity = Gravity.END
             layoutParams = LinearLayout.LayoutParams(addressLabelWidth, ViewGroup.LayoutParams.WRAP_CONTENT)
         }))
-        val webUrl = "http://[::1]:8080/"
+        val webUrl = "http://[::1]:${ServerService.DEFAULT_PORT}/"
         if (serverStatus is ServerStatus.Running) {
             webRow.addView(TextView(this).apply {
                 text = webUrl
@@ -834,7 +834,7 @@ class MainActivity : Activity() {
             gravity = Gravity.END
             layoutParams = LinearLayout.LayoutParams(addressLabelWidth, ViewGroup.LayoutParams.WRAP_CONTENT)
         }))
-        val apiUrl = "http://[::1]:8080/v1"
+        val apiUrl = "http://[::1]:${ServerService.DEFAULT_PORT}/v1"
         apiRow.addView(ink(TextView(this).apply {
             text = apiUrl
             textSize = 16f
@@ -1290,7 +1290,7 @@ class MainActivity : Activity() {
                     is ServerStatus.Failed ->
                         "The server failed to start: ${status.message} — the Engine tab shows the server log."
                     else ->
-                        "The server is not running. Start it in the Engine tab, then chat here — or in a browser at the Web UI address, http://[::1]:8080/."
+                        "The server is not running. Start it in the Engine tab, then chat here — or in a browser at the Web UI address, http://[::1]:${ServerService.DEFAULT_PORT}/."
                 }
             }
         }
